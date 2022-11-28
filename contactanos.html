@@ -39,117 +39,78 @@
     <link href="css/style.css" rel="stylesheet" />
   </head>
 
-  <body>
-    <!-- Spinner Start -->
-    <div
-      id="spinner"
-      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
-    >
-      <div class="spinner-grow text-primary" role="status"></div>
-    </div>
-    <!-- Spinner End -->
+  <!-- Spinner Start -->
+  <div id="spinner"
+    class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-grow text-primary" role="status"></div>
+  </div>
+  <!-- Spinner End -->
 
-    <!-- Topbar Start -->
-    <div
-      class="container-fluid bg-dark text-white-50 py-2 px-0 d-none d-lg-block"
-    >
-      <div class="row gx-0 align-items-center">
-        <div class="col-lg-7 px-5 text-start">
-          <div class="h-100 d-inline-flex align-items-center me-4">
-            <small class="fa fa-phone-alt me-2"></small>
-            <small>+012 345 6789</small>
-          </div>
-          <div class="h-100 d-inline-flex align-items-center me-4">
-            <small class="far fa-envelope-open me-2"></small>
-            <small>info@example.com</small>
-          </div>
-          <div class="h-100 d-inline-flex align-items-center me-4">
-            <small class="far fa-clock me-2"></small>
-            <small>Mon - Fri : 09 AM - 09 PM</small>
-          </div>
+  <!-- Topbar Start -->
+  <div class="container-fluid bg-dark text-white-50 py-2 px-0 d-none d-lg-block">
+    <div class="row gx-0 align-items-center">
+      <div class="col-lg-7 px-5 text-start">
+        <div class="h-100 d-inline-flex align-items-center me-4">
+          <small class="fa fa-phone-alt me-2"></small>
+          <small> 3123876489</small>
         </div>
-        <div class="col-lg-5 px-5 text-end">
-          <div class="h-100 d-inline-flex align-items-center">
-            <a class="text-white-50 ms-4" href=""
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a class="text-white-50 ms-4" href=""
-              ><i class="fab fa-twitter"></i
-            ></a>
-            <a class="text-white-50 ms-4" href=""
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-            <a class="text-white-50 ms-4" href=""
-              ><i class="fab fa-instagram"></i
-            ></a>
-          </div>
+        <div class="h-100 d-inline-flex align-items-center me-4">
+          <small class="far fa-envelope-open me-2"></small>
+          <small>hydrotechingenieriasas@gmail.com</small>
         </div>
       </div>
-    </div>
-    <!-- Topbar End -->
-
-    <!-- Navbar Start -->
-    <nav
-      class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5"
-    >
-      <a href="index.html" class="navbar-brand d-flex align-items-center">
-        <h1 class="m-0">
-          <img
-            class="img-fluid me-3"
-            src="img/icon/icon-02-primary.png"
-            alt=""
-          />Insure
-        </h1>
-      </a>
-      <button
-        type="button"
-        class="navbar-toggler"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarCollapse"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav mx-auto bg-light rounded pe-4 py-3 py-lg-0">
-          <a href="index.html" class="nav-item nav-link">Inicio</a>
-          <a href="about.html" class="nav-item nav-link">Nosotros</a>
-          <a href="service.html" class="nav-item nav-link">Our Services</a>
-          <div class="nav-item dropdown">
-            <a
-              href="#"
-              class="nav-link dropdown-toggle"
-              data-bs-toggle="dropdown"
-              >Pages</a
-            >
-            <div class="dropdown-menu bg-light border-0 m-0">
-              <a href="feature.html" class="dropdown-item">Features</a>
-              <a href="appointment.html" class="dropdown-item">Appointment</a>
-              <a href="team.html" class="dropdown-item">Team Members</a>
-              <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-              <a href="404.html" class="dropdown-item">404 Page</a>
-            </div>
-          </div>
-          <a href="contact.html" class="nav-item nav-link active">Contact Us</a>
-        </div>
+      <div class="col-lg-5 px-5 text-end">
+        <a class=" ms-4" href="" target="_blank"><img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAZFJREFUSEu1letNwzAUhc+Jk0j8YgRgAsoE7QgwAWUC2gmACSgTUCagbNARwgZlA/jbJFzkQizn4UeRGilS4mvfz/fhY+LADw/sH0HAtpJpQowFGOH31U9BoIBglaZ8823SCagqufwmHgmc+hwIsEkE8zTlamjeIKCsZQHgds/0LTLFeXdND/BP543fp0xxZkNaAJ0WIV5dOxfgIxHM7HSUtdwDuGvWUHBl21uAbS0bAicOwFeVYHREbmx7F6BrkiueGWDzobuFxLNn9y+54rSxl6VMkGAMwQTEpJUWKwoTwbaWJYFrT2EfMkWdDkSk0mzGAMpaCgDnMYBuWgbWFJnihR63ARJoSxNBBACZ4s53ENBMdMHLStYgxl17D+DqoCCglk8Axx3Ae6a4k5VgkSMAvdQK0C9yqE0BRNdABDd5ymUrAv0TOGhRAH3ac0UjkPtIRRTAKxU6Co/YxQD8YmdkY/hUewF2YZ1qahv+LpyFJX6DgCGFjQLYIrgTM8G66Qzdcd0x10EM3skB+QiaDw74AUxh0Rkqn3gvAAAAAElFTkSuQmCC" /></a>
+        <a class="text-white-50 ms-4"
+          href="https://api.whatsapp.com/send?phone=573123876489&text=Quiero%20saber%20mas%20sobre%20sus%20servicios"
+          target="_blank"><img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAixJREFUSEvFleFx2kAQhb+VTszkH64g0AEdhHQAFQAVGFcQp4LYFUAHVgeRKzCpwHQQ/CsZJLSZFTpGIAmYzHh8M/xBe+/tvn27J7zzkXfG5+MJ0lSHEjBRGLD/bVBWCAk5z1EkyTkVWiv4o9pzOxYIQ+DtAApdlAHClwJYiJ0wE5FNE1EjwVZ1IDk/i+vwEIVy33R5u9O5wI+iqpxxUzU1AlXtZjmvalkHjDoiq3MSlMksgc8uoH9aSY0gzTVGGWrA0MCN8C90P4ms24hKkheTKwpkXI07IjgEwneTpehDzovCphNK/2wlpVyijJ2T2MceEaQ7fQBuXcCNlVrRGFVmHScmRetJd6rAYxTKvJkg08JykRNzDlWC08yaWNKT+3uTVc52p6Zz0gllan+XEr2aS6JQbi5NfanApBpbIxBhFQUy8mC+CoGlC2V2QSKz87colAPucQ8aSiylWgpMjCQMuEuhJzkLIHYBj96a5kBVBp1QemebnAX0T23pDWBymasEPEjhOANMd2rfYi9xrQcVzQ+XqpLYXkK4P6wJePPzss10KsKCnK/Via4PWotMVaIikYyec6xMHj8vKL+8AxslKsusefmKVWH96PtqWic5y3SkwpPCXaD8tk2qsK420l8ud9YtYEMlTeC1HlQaWU9aSURYW4PLdV0MI8pzFjJt21Wnq8IekrUqCQGJLbtS37mBqtCT/XtgcSty4v9+cC5N7bXfP/5NvjbTtrh/PGYjKEkn/P4AAAAASUVORK5CYII=" /></a>
+        <a class="text-white-50 ms-4" href="https://www.instagram.com/hydrotech_ingenieria/" target="_blank"><img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAdZJREFUSEvFlUtuE0EQhr/qtkciEMGGDRucPQL7AuAbYJZISIQtEqCcALhBgmCNQUgs4QbEJ8DhApg1qygRljwz/aNxPJE9Hhs/sNLSrKarvnr8VW1s+NiG/XMxgIFUd4EXAZoGtXlZCnoODoPjIDLrFu9OZTBItGvG+1VKJ/Ekqlh73HYCkEVuge+rOM9t5GiMZzIJSNU2eLwE4JhAC0cTeJnZCT5E3nZzH0VAz+BmGSAzBLoG1wS1USDdqrdGkqgl48sI0Iu87ZQC4lQqcX6UOFqXzHon0nVOYXvbfo/K2RZczaCcfcNT9XYe+EQGZYDEsVNJuGGOR4J7GDLRUeCTKvTLerYwIK9nkuqd4GlBHW8r3p7FQV8R98f/LQPY6zs+bgU6wK1xJ4Ifkbc7capXeYNXKdHrP6e82brCN+B2AdCNvDXWAuQlilMdAM8LAtivettbq0RD2TkaQGSBhxh3M50ZdJTy2YzLuGF2E2fhHuS6xvGguGfiWE3cUPvn8vxnDwapZg4aRqaWs2Vm1BGtGRN/VPVWnzXJy66KKcbcVdGXapXAzyV20TRg3rLLbm90XefhZJn4QDZA2YNTuvzyu4JfwCGO/YUenHXKU2Z7MW/y/8ziL/MX0RkhgnzZAAAAAElFTkSuQmCC" /></a>
       </div>
-      <a href="" class="btn btn-primary px-3 d-none d-lg-block">Get A Quote</a>
-    </nav>
-    <!-- Navbar End -->
+    </div>
+  </div>
+  </div>
+  <!-- Topbar End -->
+
+  <!-- Navbar Start -->
+  <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px- px-lg-5">
+    <a href="index.html" class="navbar-brand d-flex align-items-center">
+      <h2 class="m-0">
+        HYDROTECH
+      </h2>
+    </a>
+
+    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav mx-auto bg-light rounded pe-4 py-3 py-lg-0">
+        <a href="index.html" class="nav-item nav-link active">Inicio</a>
+        <a href="nosotros.html" class="nav-item nav-link">Nosotros</a>
+        <a href="servicios.html" class="nav-item nav-link">Servicios</a>
+        <a href="clientes.html" class="nav-item nav-link">Clientes</a>
+      </div>
+    </div>
+
+    <a href="contactanos.html" class="btn btn-primary px-3 d-none d-lg-block">Contactanos</a>
+  </nav>
+  <!-- Navbar End -->
+
 
     <!-- Page Header Start -->
     <div
       class="container-fluid page-header py-5 mb-5 wow fadeIn"
       data-wow-delay="0.1s"
     >
-      <div class="container py-5">
-        <h1 class="display-4 animated slideInDown mb-4">Contact Us</h1>
+      <div class="container py-5 bg-light">
+        <h1 class="display-4 animated slideInDown mb-4">Clientes</h1>
         <nav aria-label="breadcrumb animated slideInDown">
           <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Pages</a></li>
-            <li class="breadcrumb-item active" aria-current="page">
-              Contact Us
-            </li>
+            <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Contactanos</li>
           </ol>
         </nav>
       </div>
@@ -162,14 +123,8 @@
         <div class="row g-5">
           <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
             <h1 class="display-6 mb-5">
-              If You Have Any Query, Please Contact Us
+             Por favor completa el formulario para contactar con nosotros.
             </h1>
-            <p class="mb-4">
-              The contact form is currently inactive. Get a functional and
-              working contact form with Ajax & PHP in a few minutes. Just copy
-              and paste the files, add a little code and you're done.
-              <a href="https://htmlcodex.com/contact-form">Download Now</a>.
-            </p>
             <form>
               <div class="row g-3">
                 <div class="col-md-6">
@@ -180,7 +135,7 @@
                       id="name"
                       placeholder="Your Name"
                     />
-                    <label for="name">Your Name</label>
+                    <label for="name">Nombre Completo</label>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -191,7 +146,7 @@
                       id="email"
                       placeholder="Your Email"
                     />
-                    <label for="email">Your Email</label>
+                    <label for="email">Email</label>
                   </div>
                 </div>
                 <div class="col-12">
@@ -202,7 +157,7 @@
                       id="subject"
                       placeholder="Subject"
                     />
-                    <label for="subject">Subject</label>
+                    <label for="subject">Asunto</label>
                   </div>
                 </div>
                 <div class="col-12">
@@ -213,12 +168,12 @@
                       id="message"
                       style="height: 100px"
                     ></textarea>
-                    <label for="message">Message</label>
+                    <label for="message">Mensaje</label>
                   </div>
                 </div>
                 <div class="col-12">
                   <button class="btn btn-primary py-3 px-5" type="submit">
-                    Send Message
+                    Enviar
                   </button>
                 </div>
               </div>
@@ -246,93 +201,46 @@
     </div>
     <!-- Contact End -->
 
-    <!-- Footer Start -->
-    <div
-      class="container-fluid bg-dark footer mt-5 pt-5 wow fadeIn"
-      data-wow-delay="0.1s"
-    >
-      <div class="container py-5">
-        <div class="row g-5">
-          <div class="col-lg-3 col-md-6">
-            <h1 class="text-white mb-4">
-              <img
-                class="img-fluid me-3"
-                src="img/icon/icon-02-light.png"
-                alt=""
-              />Insure
-            </h1>
-            <p>
-              Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat
-              ipsum et lorem et sit, sed stet lorem sit clita
-            </p>
-            <div class="d-flex pt-2">
-              <a class="btn btn-square me-1" href=""
-                ><i class="fab fa-twitter"></i
-              ></a>
-              <a class="btn btn-square me-1" href=""
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a class="btn btn-square me-1" href=""
-                ><i class="fab fa-youtube"></i
-              ></a>
-              <a class="btn btn-square me-0" href=""
-                ><i class="fab fa-linkedin-in"></i
-              ></a>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <h5 class="text-light mb-4">Address</h5>
-            <p>
-              <i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA
-            </p>
-            <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-            <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <h5 class="text-light mb-4">Quick Links</h5>
-            <a class="btn btn-link" href="">About Us</a>
-            <a class="btn btn-link" href="">Contact Us</a>
-            <a class="btn btn-link" href="">Our Services</a>
-            <a class="btn btn-link" href="">Terms & Condition</a>
-            <a class="btn btn-link" href="">Support</a>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <h5 class="text-light mb-4">Newsletter</h5>
-            <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-            <div class="position-relative mx-auto" style="max-width: 400px">
-              <input
-                class="form-control bg-transparent w-100 py-3 ps-4 pe-5"
-                type="text"
-                placeholder="Your email"
-              />
-              <button
-                type="button"
-                class="btn btn-secondary py-2 position-absolute top-0 end-0 mt-2 me-2"
-              >
-                SignUp
-              </button>
-            </div>
+    
+  <!-- Footer Start -->
+  <div class="container-fluid bg-dark footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+      <div class="row g-5">
+        <div class="col-lg-3 col-md-6">
+          <h1 class="text-white mb-4">
+            <img class="img-fluid me-3" src="img/icon/icon-02-light.png" alt="" />HYDROTECH
+          </h1>
+          <div class="d-flex pt-2">
+            <a class="btn btn-square me-1" href=""><img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAZFJREFUSEu1letNwzAUhc+Jk0j8YgRgAsoE7QgwAWUC2gmACSgTUCagbNARwgZlA/jbJFzkQizn4UeRGilS4mvfz/fhY+LADw/sH0HAtpJpQowFGOH31U9BoIBglaZ8823SCagqufwmHgmc+hwIsEkE8zTlamjeIKCsZQHgds/0LTLFeXdND/BP543fp0xxZkNaAJ0WIV5dOxfgIxHM7HSUtdwDuGvWUHBl21uAbS0bAicOwFeVYHREbmx7F6BrkiueGWDzobuFxLNn9y+54rSxl6VMkGAMwQTEpJUWKwoTwbaWJYFrT2EfMkWdDkSk0mzGAMpaCgDnMYBuWgbWFJnihR63ARJoSxNBBACZ4s53ENBMdMHLStYgxl17D+DqoCCglk8Axx3Ae6a4k5VgkSMAvdQK0C9yqE0BRNdABDd5ymUrAv0TOGhRAH3ac0UjkPtIRRTAKxU6Co/YxQD8YmdkY/hUewF2YZ1qahv+LpyFJX6DgCGFjQLYIrgTM8G66Qzdcd0x10EM3skB+QiaDw74AUxh0Rkqn3gvAAAAAElFTkSuQmCC" /></a>
+            <a class="btn btn-square me-1" href=""><img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAixJREFUSEvFleFx2kAQhb+VTszkH64g0AEdhHQAFQAVGFcQp4LYFUAHVgeRKzCpwHQQ/CsZJLSZFTpGIAmYzHh8M/xBe+/tvn27J7zzkXfG5+MJ0lSHEjBRGLD/bVBWCAk5z1EkyTkVWiv4o9pzOxYIQ+DtAApdlAHClwJYiJ0wE5FNE1EjwVZ1IDk/i+vwEIVy33R5u9O5wI+iqpxxUzU1AlXtZjmvalkHjDoiq3MSlMksgc8uoH9aSY0gzTVGGWrA0MCN8C90P4ms24hKkheTKwpkXI07IjgEwneTpehDzovCphNK/2wlpVyijJ2T2MceEaQ7fQBuXcCNlVrRGFVmHScmRetJd6rAYxTKvJkg08JykRNzDlWC08yaWNKT+3uTVc52p6Zz0gllan+XEr2aS6JQbi5NfanApBpbIxBhFQUy8mC+CoGlC2V2QSKz87colAPucQ8aSiylWgpMjCQMuEuhJzkLIHYBj96a5kBVBp1QemebnAX0T23pDWBymasEPEjhOANMd2rfYi9xrQcVzQ+XqpLYXkK4P6wJePPzss10KsKCnK/Via4PWotMVaIikYyec6xMHj8vKL+8AxslKsusefmKVWH96PtqWic5y3SkwpPCXaD8tk2qsK420l8ud9YtYEMlTeC1HlQaWU9aSURYW4PLdV0MI8pzFjJt21Wnq8IekrUqCQGJLbtS37mBqtCT/XtgcSty4v9+cC5N7bXfP/5NvjbTtrh/PGYjKEkn/P4AAAAASUVORK5CYII="
+                alt=""></a>
+            <a class="btn btn-square me-1" href=""><img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAdZJREFUSEvFlUtuE0EQhr/qtkciEMGGDRucPQL7AuAbYJZISIQtEqCcALhBgmCNQUgs4QbEJ8DhApg1qygRljwz/aNxPJE9Hhs/sNLSrKarvnr8VW1s+NiG/XMxgIFUd4EXAZoGtXlZCnoODoPjIDLrFu9OZTBItGvG+1VKJ/Ekqlh73HYCkEVuge+rOM9t5GiMZzIJSNU2eLwE4JhAC0cTeJnZCT5E3nZzH0VAz+BmGSAzBLoG1wS1USDdqrdGkqgl48sI0Iu87ZQC4lQqcX6UOFqXzHon0nVOYXvbfo/K2RZczaCcfcNT9XYe+EQGZYDEsVNJuGGOR4J7GDLRUeCTKvTLerYwIK9nkuqd4GlBHW8r3p7FQV8R98f/LQPY6zs+bgU6wK1xJ4Ifkbc7capXeYNXKdHrP6e82brCN+B2AdCNvDXWAuQlilMdAM8LAtivettbq0RD2TkaQGSBhxh3M50ZdJTy2YzLuGF2E2fhHuS6xvGguGfiWE3cUPvn8vxnDwapZg4aRqaWs2Vm1BGtGRN/VPVWnzXJy66KKcbcVdGXapXAzyV20TRg3rLLbm90XefhZJn4QDZA2YNTuvzyu4JfwCGO/YUenHXKU2Z7MW/y/8ziL/MX0RkhgnzZAAAAAElFTkSuQmCC" /></a>
           </div>
         </div>
+        <div class="d-flex">
+          <h5 class="text-light mb-4 m">Contacto:</h5>
+          <p>
+            <i class="fa fa-map-marker-alt me-3 ps-5"></i>LUGAR KM 54 8 AUT BOGOTA GIRARDOT
+          </p>
+          <p><i class="fa fa-phone-alt me-3 ps-5"></i>3123876489</p>
+          <p><i class="fa fa-envelope me-3 ps-5"></i>hydrotechingenieriasas@gmail.com</p>
+        </div>
       </div>
-      <div class="container-fluid copyright">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-              &copy; <a href="#">Your Site Name</a>, All Right Reserved.
-            </div>
-            <div class="col-md-6 text-center text-md-end">
-              <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-              Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-              <br />Distributed By:
-              <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-            </div>
+    </div>
+    <div class="container-fluid copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            &copy; <a href="#">HYDROTECH</a>, All Right Reserved.
           </div>
         </div>
       </div>
     </div>
-    <!-- Footer End -->
-
+  </div>
+  <!-- Footer End -->
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
       ><i class="bi bi-arrow-up"></i
