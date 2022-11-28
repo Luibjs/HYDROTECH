@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Hydrotech</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="" name="keywords" />
+  <meta content="" name="description" />
+
+  <!-- Favicon -->
+  <link href="img/favicon.ico" rel="icon" />
+
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Libraries Stylesheet -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet" />
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Spinner Start -->
+  <div id="spinner"
+    class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-grow text-primary" role="status"></div>
+  </div>
+  <!-- Spinner End -->
+
+  <!-- Topbar Start -->
+  <div class="container-fluid bg-dark text-white-50 py-2 px-0 d-none d-lg-block">
+    <div class="row gx-0 align-items-center">
+      <div class="col-lg-7 px-5 text-start">
+        <div class="h-100 d-inline-flex align-items-center me-4">
+          <small class="fa fa-phone-alt me-2"></small>
+          <small> 3123876489</small>
+        </div>
+        <div class="h-100 d-inline-flex align-items-center me-4">
+          <small class="far fa-envelope-open me-2"></small>
+          <small>hydrotechingenieriasas@gmail.com</small>
+        </div>
+      </div>
+      <div class="col-lg-5 px-5 text-end">
+        <a class=" ms-4" href="" target="_blank"><img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAZFJREFUSEu1letNwzAUhc+Jk0j8YgRgAsoE7QgwAWUC2gmACSgTUCagbNARwgZlA/jbJFzkQizn4UeRGilS4mvfz/fhY+LADw/sH0HAtpJpQowFGOH31U9BoIBglaZ8823SCagqufwmHgmc+hwIsEkE8zTlamjeIKCsZQHgds/0LTLFeXdND/BP543fp0xxZkNaAJ0WIV5dOxfgIxHM7HSUtdwDuGvWUHBl21uAbS0bAicOwFeVYHREbmx7F6BrkiueGWDzobuFxLNn9y+54rSxl6VMkGAMwQTEpJUWKwoTwbaWJYFrT2EfMkWdDkSk0mzGAMpaCgDnMYBuWgbWFJnihR63ARJoSxNBBACZ4s53ENBMdMHLStYgxl17D+DqoCCglk8Axx3Ae6a4k5VgkSMAvdQK0C9yqE0BRNdABDd5ymUrAv0TOGhRAH3ac0UjkPtIRRTAKxU6Co/YxQD8YmdkY/hUewF2YZ1qahv+LpyFJX6DgCGFjQLYIrgTM8G66Qzdcd0x10EM3skB+QiaDw74AUxh0Rkqn3gvAAAAAElFTkSuQmCC" /></a>
+        <a class="text-white-50 ms-4"
+          href="https://api.whatsapp.com/send?phone=573123876489&text=Quiero%20saber%20mas%20sobre%20sus%20servicios"
+          target="_blank"><img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAixJREFUSEvFleFx2kAQhb+VTszkH64g0AEdhHQAFQAVGFcQp4LYFUAHVgeRKzCpwHQQ/CsZJLSZFTpGIAmYzHh8M/xBe+/tvn27J7zzkXfG5+MJ0lSHEjBRGLD/bVBWCAk5z1EkyTkVWiv4o9pzOxYIQ+DtAApdlAHClwJYiJ0wE5FNE1EjwVZ1IDk/i+vwEIVy33R5u9O5wI+iqpxxUzU1AlXtZjmvalkHjDoiq3MSlMksgc8uoH9aSY0gzTVGGWrA0MCN8C90P4ms24hKkheTKwpkXI07IjgEwneTpehDzovCphNK/2wlpVyijJ2T2MceEaQ7fQBuXcCNlVrRGFVmHScmRetJd6rAYxTKvJkg08JykRNzDlWC08yaWNKT+3uTVc52p6Zz0gllan+XEr2aS6JQbi5NfanApBpbIxBhFQUy8mC+CoGlC2V2QSKz87colAPucQ8aSiylWgpMjCQMuEuhJzkLIHYBj96a5kBVBp1QemebnAX0T23pDWBymasEPEjhOANMd2rfYi9xrQcVzQ+XqpLYXkK4P6wJePPzss10KsKCnK/Via4PWotMVaIikYyec6xMHj8vKL+8AxslKsusefmKVWH96PtqWic5y3SkwpPCXaD8tk2qsK420l8ud9YtYEMlTeC1HlQaWU9aSURYW4PLdV0MI8pzFjJt21Wnq8IekrUqCQGJLbtS37mBqtCT/XtgcSty4v9+cC5N7bXfP/5NvjbTtrh/PGYjKEkn/P4AAAAASUVORK5CYII=" /></a>
+        <a class="text-white-50 ms-4" href="https://www.instagram.com/hydrotech_ingenieria/" target="_blank"><img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAdZJREFUSEvFlUtuE0EQhr/qtkciEMGGDRucPQL7AuAbYJZISIQtEqCcALhBgmCNQUgs4QbEJ8DhApg1qygRljwz/aNxPJE9Hhs/sNLSrKarvnr8VW1s+NiG/XMxgIFUd4EXAZoGtXlZCnoODoPjIDLrFu9OZTBItGvG+1VKJ/Ekqlh73HYCkEVuge+rOM9t5GiMZzIJSNU2eLwE4JhAC0cTeJnZCT5E3nZzH0VAz+BmGSAzBLoG1wS1USDdqrdGkqgl48sI0Iu87ZQC4lQqcX6UOFqXzHon0nVOYXvbfo/K2RZczaCcfcNT9XYe+EQGZYDEsVNJuGGOR4J7GDLRUeCTKvTLerYwIK9nkuqd4GlBHW8r3p7FQV8R98f/LQPY6zs+bgU6wK1xJ4Ifkbc7capXeYNXKdHrP6e82brCN+B2AdCNvDXWAuQlilMdAM8LAtivettbq0RD2TkaQGSBhxh3M50ZdJTy2YzLuGF2E2fhHuS6xvGguGfiWE3cUPvn8vxnDwapZg4aRqaWs2Vm1BGtGRN/VPVWnzXJy66KKcbcVdGXapXAzyV20TRg3rLLbm90XefhZJn4QDZA2YNTuvzyu4JfwCGO/YUenHXKU2Z7MW/y/8ziL/MX0RkhgnzZAAAAAElFTkSuQmCC" /></a>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- Topbar End -->
+
+  <!-- Navbar Start -->
+  <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px- px-lg-5">
+    <a href="index.html" class="navbar-brand d-flex align-items-center">
+      <h2 class="m-0">
+        HYDROTECH
+      </h2>
+    </a>
+
+    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav mx-auto bg-light rounded pe-4 py-3 py-lg-0">
+        <a href="index.html" class="nav-item nav-link active">Inicio</a>
+        <a href="nosotros.html" class="nav-item nav-link">Nosotros</a>
+        <a href="servicios.html" class="nav-item nav-link">Servicios</a>
+        <a href="clientes.html" class="nav-item nav-link">Clientes</a>
+      </div>
+    </div>
+
+    <a href="contactanos.html" class="btn btn-primary px-3 d-none d-lg-block">Contactanos</a>
+  </nav>
+  <!-- Navbar End -->
+
+  <!-- Carousel Start -->
+  <div class="container-fluid p-0 mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="w-100 img-fluid"
+            src="https://www.distromel.com/wp-content/uploads/2019/10/Sistema-de-pesaje-en-camion-recolector-residuos-670x300@2x.jpg"
+            alt="Image" />
+          <div class="carousel-caption">
+            <div class="container">
+              <div class="row">
+                <div class="col-12 col-lg-6">
+                  <h1 class="display-3 text-dark mb-4 animated slideInDown">
+                    Fabricamos equipos y soluciones.
+                  </h1>
+                  <a href="" class="btn btn-primary py-3 px-5">Ver Mas</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="w-100 img-fluid"
+            src="https://grupofridex.com/wp-content/uploads/2021/04/img-5485-55a8d9f4dee7b.jpeg" alt="Image" />
+          <div class="carousel-caption">
+            <div class="container">
+              <div class="row">
+                <div class="col-12 col-lg-6">
+                  <h1 class="display-3 text-dark mb-4 animated slideInDown">
+                    The Best Insurance Begins Here
+                  </h1>
+                  <p class="fs-5 text-body mb-5">
+                    Clita erat ipsum et lorem et sit, sed stet lorem sit clita
+                    duo justo magna dolore erat amet
+                  </p>
+                  <a href="" class="btn btn-primary py-3 px-5">More Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <!-- Carousel End -->
+
+
+  <!-- Facts Start -->
+  <div class="container-fluid overflow-hidden my-5 px-lg-0">
+    <div class="container facts px-lg-0">
+      <div class="row g-0 mx-lg-0">
+        <div class="col-lg-6 facts-text wow fadeIn" data-wow-delay="0.1s">
+          <div class="h-100 px-4 ps-lg-0">
+            <h1 class="text-white mb-4">Nuestros clientes nos respaldan</h1>
+            <p class="text-light mb-5 mt-4">
+              Somos una empresa colombiana que cuenta con una amplia gama de servicios, equipos y maquinaria para el
+              manejo
+              de los desechos sólidos, líquidos y semisolidos en los alcantarillados, pozos sépticos y tuberías.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-6 facts-counter wow fadeIn" data-wow-delay="0.5s">
+          <div class="h-100 px-4 pe-lg-0">
+            <div class="row g-5 p-5">
+              <div class="col-sm-6">
+                <h1 class="display-5" data-toggle="counter-up">200</h1>
+                <p class="fs-5 text-primary">Clientes Felices</p>
+              </div>
+              <div class="col-sm-6">
+                <h1 class="display-5" data-toggle="counter-up">500</h1>
+                <p class="fs-5 text-primary">Proyectos finalizados</p>
+              </div>
+
+              <div class="col-sm-6">
+                <h1 class="display-5" data-toggle="counter-up">50</h1>
+                <p class="fs-5 text-primary">Nuestro Equipo</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Facts End -->
+
+
+  <!-- About Start -->
+  <div class="container-xxl py-5">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+          <div class="position-relative overflow-hidden rounded ps-5 pt-5 h-100" style="min-height: 400px">
+            <img class="position-absolute w-100 h-100"
+              src="https://orientacion.universia.net.co/imgs2011/imagenes/industrial-2021_09_26_221000@2x.jpg">
+            <div class="position-absolute top-0 start-0 bg-white rounded pe-3 pb-3" style="width: 200px; height: 200px">
+              <div class="d-flex flex-column justify-content-center text-center bg-primary rounded h-100 p-3">
+                <h1 class="text-white mb-0">+30</h1>
+                <h2 class="text-white">Años</h2>
+                <h5 class="text-white mb-0">Experiencia</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 wow fadeInUp p-4" data-wow-delay="0.5s">
+          <div class="h-100">
+            <h2 class="fs-5 text-primary mb-4">
+              <b>Somos una empresa con un gran equipo de trabajo que dia a dia busca superar los nuevos retos.</b>
+            </h2>
+            <div class="d-print-block">
+              <p>
+                Desarrollamos soluciones en areas hidráulicas, áreas hidráulicas, alcantarillado, estructuras viales y
+                residenciales.
+            </div>
+            </p>
+            <div class="row g-4 mb-4">
+              <div class="col-sm-12">
+                <div class="d-flex align-items-center">
+                  <img class="flex-shrink-0 me-3"
+                    src="https://lifedesign.es/wp-content/uploads/2020/09/LIFE-DESIGN-JAIME-ARANDA-DISEN%CC%83O-DE-VIDA-DESIGN-THINKING-CAREER-COACH-ico-dt.png"
+                    height="90px" alt="" />
+                  <h5 class="mb-0">Diseñamos soluciones</h5>
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="d-flex align-items-center">
+                  <img class="flex-shrink-0 me-3" src="https://cdn-icons-png.flaticon.com/512/1064/1064228.png"
+                    height="90px" alt="" />
+                  <h5 class="mb-0">tecnología industrial</h5>
+                </div>
+              </div>
+            </div>
+            <p class="mb-4">
+              Fabricamos equipos y soluciones, de acuerdo a necesidades del orden mecánico, automatización de
+              procesos,
+              habilitación y recuperación de estructuras hidráulicas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- About End -->
+
+
+
+  <!-- Service Start -->
+  <div class="container-xxl py-5">
+    <div class="container">
+      <div class="text-center mx-auto" style="max-width: 500px">
+        <h1 class="display-6 mb-5">
+          Nuestros Servicios
+        </h1>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+          <div class="service-item rounded h-100 p-5">
+            <div class="d-flex align-items-center ms-n5 mb-4">
+              <div class="service-icon flex-shrink-0 border border-4 border-primary rounded-end me-4">
+                <img class=" " src="https://fareco.com.pe/wp-content/uploads/2021/07/2-Mini-Hidrojet-DYNAVAC-B.jpg"
+                  alt="" height="90px" width="300px" />
+              </div>
+              <h4 class="mb-0">Equipo Hidrojet</h4>
+            </div>
+            <p class="mb-4">
+              Aliqu diam amet eos erat ipsum et lorem et sit, sed stet lorem
+              sit clita duo justo erat amet
+            </p>
+            <a class="btn btn-light px-3" href="">Ver mas</a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+          <div class="service-item rounded h-100 p-5">
+            <div class="d-flex align-items-center ms-n5 mb-4">
+              <div class="service-icon flex-shrink-0 border border-4 border-primary rounded-end me-4">
+                <img class=" " src="http://hydrotechcolombia.com/images/nueva-u-multifuncional.jpg" alt=""
+                  height="120px" />
+              </div>
+              <h4 class="mb-0">Unidad Multifuncional</h4>
+            </div>
+            <p class="mb-4">
+              Aliqu diam amet eos erat ipsum et lorem et sit, sed stet lorem
+              sit clita duo justo erat amet
+            </p>
+            <a class="btn btn-light px-3" href="">Ver mas</a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+          <div class="service-item rounded h-100 p-5">
+            <div class="d-flex align-items-center ms-n5 mb-4">
+              <div class="service-icon flex-shrink-0 border border-4 border-primary rounded-end me-4">
+                <img class=" " src="https://www.hydrotechcolombia.com/images/COMPACTADOR-01.jpg" alt=""
+                  height="120px" />
+              </div>
+              <h4 class="mb-0">Recolector - Compactador</h4>
+            </div>
+            <p class="mb-4">
+              Aliqu diam amet eos erat ipsum et lorem et sit, sed stet lorem
+              sit clita duo justo erat amet
+            </p>
+            <a class="btn btn-light px-3" href="">Ver mas</a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+          <div class="service-item rounded h-100 p-5">
+            <div class="d-flex align-items-center ms-n5 mb-4">
+              <div class="service-icon flex-shrink-0 border border-4 border-primary rounded-end me-4">
+                <img class=" " src="https://www.hydrotechcolombia.com/images/CABRESTANTE-01.jpg" alt=""
+                  height="120px" />
+              </div>
+              <h4 class="mb-0">Equipo Cabrestante</h4>
+            </div>
+            <p class="mb-4">
+              Aliqu diam amet eos erat ipsum et lorem et sit, sed stet lorem
+              sit clita duo justo erat amet
+            </p>
+            <a class="btn btn-light px-3" href="">Ver mas</a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+          <div class="service-item rounded h-100 p-5">
+            <div class="d-flex align-items-center ms-n5 mb-4">
+              <div class="service-icon flex-shrink-0 border border-4 border-primary rounded-end me-4">
+                <img class=" " src="https://www.hydrotechcolombia.com/images/SUCCION-PRESION-01.jpg" alt=""
+                  height="50px" />
+              </div>
+              <h4 class="mb-0">Combinado SUCCION-PRESIÓN</h4>
+            </div>
+            <p class="mb-4">
+              Aliqu diam amet eos erat ipsum et lorem et sit, sed stet lorem
+              sit clita duo justo erat amet
+            </p>
+            <a class="btn btn-light px-3" href="">Ver mas</a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+          <div class="service-item rounded h-100 p-5">
+            <div class="d-flex align-items-center ms-n5 mb-4">
+              <div class="service-icon flex-shrink-0 border border-4 border-primary rounded-end me-4">
+                <img class=" " src="https://www.hydrotechcolombia.com/images/ROTASONDA-01.jpg" alt="" />
+              </div>
+              <h4 class="mb-0">Equipo Rotasonda</h4>
+            </div>
+            <p class="mb-4">
+              Aliqu diam amet eos erat ipsum et lorem et sit, sed stet lorem
+              sit clita duo justo erat amet
+            </p>
+            <a class="btn btn-light px-3" href="">Ver mas</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Service End -->
+
+  <!-- Appointment Start -->
+  <div class="container-fluid appointment my-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+      <div class="row g-5">
+        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.3s">
+          <h1 class="display-6 text-white mb-5">
+            Estamos 100% comprometidos con nuestos clientes
+          </h1>
+          <p class="text-white mb-5">
+            Desarrollamos soluciones principalmente en las áreas hidráulicas, alcantarillado, estructuras viales y
+            residenciales.
+          </p>
+          <div class="bg-white rounded p-3">
+            <div class="d-flex align-items-center bg-primary rounded p-3">
+              <img class="flex-shrink-0 rounded-circle me-3" src="img/profile.jpg" alt="" />
+              <h5 class="text-white mb-0">Jefe</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+          <div class="bg-white rounded p-5">
+            <form>
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="gname" placeholder="Gurdian Name" />
+                    <label for="gname">Nombre Completo</label>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-floating">
+                    <input type="email" class="form-control" id="gmail" placeholder="Gurdian Email" />
+                    <label for="gmail">Email</label>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="cname" placeholder="Child Name" />
+                    <label for="cname">Celular</label>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="cage" placeholder="Child Age" />
+                    <label for="cage">Asunto</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a message here" id="message"
+                      style="height: 80px"></textarea>
+                    <label for="message">Mensaje</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-primary py-3 px-5" type="submit">
+                    Enviar
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Appointment End -->
+
+  <!-- Team Start -->
+  <div class="container-xxl py-5">
+    <div class="container">
+      <div class="text-center mx-auto" style="max-width: 500px">
+        <h1 class="display-6 mb-5">Nuestro Equipo de profesionales</h1>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+          <div class="team-item rounded">
+            <img class="img-fluid" src="img/team-1.jpg" alt="" />
+            <div class="text-center p-4">
+              <h5>..</h5>
+              <span>Cargo</span>
+            </div>
+            <div class="team-text text-center bg-white p-4">
+              <h5>..</h5>
+              <p>Cargo</p>
+              <div class="d-flex justify-content-center">
+                <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-youtube"></i></a>
+                <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+          <div class="team-item rounded">
+            <img class="img-fluid" src="img/team-2.jpg" alt="" />
+            <div class="text-center p-4">
+              <h5>..</h5>
+              <span>Cargo</span>
+            </div>
+            <div class="team-text text-center bg-white p-4">
+              <h5>..</h5>
+              <p>Cargo</p>
+              <div class="d-flex justify-content-center">
+                <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-youtube"></i></a>
+                <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+          <div class="team-item rounded">
+            <img class="img-fluid" src="img/team-3.jpg" alt="" />
+            <div class="text-center p-4">
+              <h5>..</h5>
+              <span>Cargo</span>
+            </div>
+            <div class="team-text text-center bg-white p-4">
+              <h5>..</h5>
+              <p>Cargo</p>
+              <div class="d-flex justify-content-center">
+                <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-youtube"></i></a>
+                <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+          <div class="team-item rounded">
+            <img class="img-fluid" src="img/team-4.jpg" alt="" />
+            <div class="text-center p-4">
+              <h5>..</h5>
+              <span>Cargo</span>
+            </div>
+            <div class="team-text text-center bg-white p-4">
+              <h5>..</h5>
+              <p>Cargo</p>
+              <div class="d-flex justify-content-center">
+                <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-youtube"></i></a>
+                <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Team End -->
+
+  <!-- Testimonial Start -->
+  <div class="container-xxl py-5">
+    <div class="container">
+      <div class="text-center mx-auto" style="max-width: 500px">
+        <h1 class="display-6 mb-5">Clientes</h1>
+      </div>
+      <div class="row g-5">
+        <div class="col-lg-3 d-none d-lg-block">
+          <div class="testimonial-left h-100">
+            <img class="img-fluid animated pulse infinite"
+              src="https://cdn.dribbble.com/userupload/3158902/file/original-7c71bfa677e61dea61bc2acd59158d32.jpg?resize=400x0"
+              alt="" />
+            <img class="img-fluid animated pulse infinite"
+              src="https://cdn.dribbble.com/userupload/3158902/file/original-7c71bfa677e61dea61bc2acd59158d32.jpg?resize=400x0"
+              alt="" />
+            <img class="img-fluid animated pulse infinite"
+              src="https://cdn.dribbble.com/userupload/3158902/file/original-7c71bfa677e61dea61bc2acd59158d32.jpg?resize=400x0"
+              alt="" />
+          </div>
+        </div>
+        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+          <div class="owl-carousel testimonial-carousel">
+            <div class="testimonial-item text-center">
+              <img class="img-fluid rounded mx-auto mb-4"
+                src="https://cdn.dribbble.com/userupload/3158902/file/original-7c71bfa677e61dea61bc2acd59158d32.jpg?resize=400x0"
+                alt="" />
+              <p class="fs-5">
+                Descripcion del servicio Prestado a la empresa.
+              </p>
+              <h5>Nombre de la empresa</h5>
+            </div>
+            <div class="testimonial-item text-center">
+              <img class="img-fluid rounded mx-auto mb-4"
+                src="https://cdn.dribbble.com/userupload/3158902/file/original-7c71bfa677e61dea61bc2acd59158d32.jpg?resize=400x0"
+                alt="" />
+              <p class="fs-5">
+                Descripcion del servicio Prestado a la empresa.
+              </p>
+              <h5>Nombre de la empresa</h5>
+            </div>
+            <div class="testimonial-item text-center">
+              <img class="img-fluid rounded mx-auto mb-4"
+                src="https://cdn.dribbble.com/userupload/3158902/file/original-7c71bfa677e61dea61bc2acd59158d32.jpg?resize=400x0"
+                alt="" />
+              <p class="fs-5">
+                Descripcion del servicio Prestado a la empresa.
+              </p>
+              <h5>Nombre de la empresa</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 d-none d-lg-block">
+          <div class="testimonial-right h-100">
+            <img class="img-fluid animated pulse infinite"
+              src="https://cdn.dribbble.com/userupload/3158902/file/original-7c71bfa677e61dea61bc2acd59158d32.jpg?resize=400x0"
+              alt="" />
+            <img class="img-fluid animated pulse infinite"
+              src="https://cdn.dribbble.com/userupload/3158902/file/original-7c71bfa677e61dea61bc2acd59158d32.jpg?resize=400x0"
+              alt="" />
+            <img class="img-fluid animated pulse infinite"
+              src="https://cdn.dribbble.com/userupload/3158902/file/original-7c71bfa677e61dea61bc2acd59158d32.jpg?resize=400x0"
+              alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Testimonial End -->
+
+  <!-- Footer Start -->
+  <div class="container-fluid bg-dark footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+      <div class="row g-5">
+        <div class="col-lg-3 col-md-6">
+          <h1 class="text-white mb-4">
+            <img class="img-fluid me-3" src="img/icon/icon-02-light.png" alt="" />HYDROTECH
+          </h1>
+          <div class="d-flex pt-2">
+            <a class="btn btn-square me-1" href=""><img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAZFJREFUSEu1letNwzAUhc+Jk0j8YgRgAsoE7QgwAWUC2gmACSgTUCagbNARwgZlA/jbJFzkQizn4UeRGilS4mvfz/fhY+LADw/sH0HAtpJpQowFGOH31U9BoIBglaZ8823SCagqufwmHgmc+hwIsEkE8zTlamjeIKCsZQHgds/0LTLFeXdND/BP543fp0xxZkNaAJ0WIV5dOxfgIxHM7HSUtdwDuGvWUHBl21uAbS0bAicOwFeVYHREbmx7F6BrkiueGWDzobuFxLNn9y+54rSxl6VMkGAMwQTEpJUWKwoTwbaWJYFrT2EfMkWdDkSk0mzGAMpaCgDnMYBuWgbWFJnihR63ARJoSxNBBACZ4s53ENBMdMHLStYgxl17D+DqoCCglk8Axx3Ae6a4k5VgkSMAvdQK0C9yqE0BRNdABDd5ymUrAv0TOGhRAH3ac0UjkPtIRRTAKxU6Co/YxQD8YmdkY/hUewF2YZ1qahv+LpyFJX6DgCGFjQLYIrgTM8G66Qzdcd0x10EM3skB+QiaDw74AUxh0Rkqn3gvAAAAAElFTkSuQmCC" /></a>
+            <a class="btn btn-square me-1" href=""><img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAixJREFUSEvFleFx2kAQhb+VTszkH64g0AEdhHQAFQAVGFcQp4LYFUAHVgeRKzCpwHQQ/CsZJLSZFTpGIAmYzHh8M/xBe+/tvn27J7zzkXfG5+MJ0lSHEjBRGLD/bVBWCAk5z1EkyTkVWiv4o9pzOxYIQ+DtAApdlAHClwJYiJ0wE5FNE1EjwVZ1IDk/i+vwEIVy33R5u9O5wI+iqpxxUzU1AlXtZjmvalkHjDoiq3MSlMksgc8uoH9aSY0gzTVGGWrA0MCN8C90P4ms24hKkheTKwpkXI07IjgEwneTpehDzovCphNK/2wlpVyijJ2T2MceEaQ7fQBuXcCNlVrRGFVmHScmRetJd6rAYxTKvJkg08JykRNzDlWC08yaWNKT+3uTVc52p6Zz0gllan+XEr2aS6JQbi5NfanApBpbIxBhFQUy8mC+CoGlC2V2QSKz87colAPucQ8aSiylWgpMjCQMuEuhJzkLIHYBj96a5kBVBp1QemebnAX0T23pDWBymasEPEjhOANMd2rfYi9xrQcVzQ+XqpLYXkK4P6wJePPzss10KsKCnK/Via4PWotMVaIikYyec6xMHj8vKL+8AxslKsusefmKVWH96PtqWic5y3SkwpPCXaD8tk2qsK420l8ud9YtYEMlTeC1HlQaWU9aSURYW4PLdV0MI8pzFjJt21Wnq8IekrUqCQGJLbtS37mBqtCT/XtgcSty4v9+cC5N7bXfP/5NvjbTtrh/PGYjKEkn/P4AAAAASUVORK5CYII="
+                alt=""></a>
+            <a class="btn btn-square me-1" href=""><img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAdZJREFUSEvFlUtuE0EQhr/qtkciEMGGDRucPQL7AuAbYJZISIQtEqCcALhBgmCNQUgs4QbEJ8DhApg1qygRljwz/aNxPJE9Hhs/sNLSrKarvnr8VW1s+NiG/XMxgIFUd4EXAZoGtXlZCnoODoPjIDLrFu9OZTBItGvG+1VKJ/Ekqlh73HYCkEVuge+rOM9t5GiMZzIJSNU2eLwE4JhAC0cTeJnZCT5E3nZzH0VAz+BmGSAzBLoG1wS1USDdqrdGkqgl48sI0Iu87ZQC4lQqcX6UOFqXzHon0nVOYXvbfo/K2RZczaCcfcNT9XYe+EQGZYDEsVNJuGGOR4J7GDLRUeCTKvTLerYwIK9nkuqd4GlBHW8r3p7FQV8R98f/LQPY6zs+bgU6wK1xJ4Ifkbc7capXeYNXKdHrP6e82brCN+B2AdCNvDXWAuQlilMdAM8LAtivettbq0RD2TkaQGSBhxh3M50ZdJTy2YzLuGF2E2fhHuS6xvGguGfiWE3cUPvn8vxnDwapZg4aRqaWs2Vm1BGtGRN/VPVWnzXJy66KKcbcVdGXapXAzyV20TRg3rLLbm90XefhZJn4QDZA2YNTuvzyu4JfwCGO/YUenHXKU2Z7MW/y/8ziL/MX0RkhgnzZAAAAAElFTkSuQmCC" /></a>
+          </div>
+        </div>
+        <div class="d-flex">
+          <h5 class="text-light mb-4 m">Contacto:</h5>
+          <p>
+            <i class="fa fa-map-marker-alt me-3 ps-5"></i>LUGAR KM 54 8 AUT BOGOTA GIRARDOT
+          </p>
+          <p><i class="fa fa-phone-alt me-3 ps-5"></i>3123876489</p>
+          <p><i class="fa fa-envelope me-3 ps-5"></i>hydrotechingenieriasas@gmail.com</p>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            &copy; <a href="#">HYDROTECH</a>, All Right Reserved.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer End -->
+
+  <!-- Back to Top -->
+  <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+
+  <!-- Template Javascript -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
